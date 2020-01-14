@@ -1,0 +1,23 @@
+---
+docker:
+  instances: 1
+  cpus: 0.5
+  mem: 512
+  custom_config: False
+  portMappings:
+    - name: 'app'
+      containerPort: 5000
+  healthcheck:
+    - gracePeriodSeconds: 180
+      intervalSeconds: 300
+      timeoutSeconds: 120
+      maxConsecutiveFailures: 3
+      protocol: 'MESOS_HTTP'
+      path: '/health'
+  volumes:
+    - containerPath: '/config'
+      hostPath: '/mnt/aesources/config'
+      mode: 'RO'
+  environment:
+    - key: 'global_config'
+      value: '/config/dev-config.json'

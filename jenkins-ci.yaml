@@ -1,0 +1,7 @@
+---
+# AIML / PRAN (PRICE ANALYTICS) 
+team: test
+# PYTHON / NPM / SCALA / JAVA
+CODEBASE: python
+# ONLY GCS for now
+SERVICE: gcs
